@@ -1,68 +1,95 @@
 # hmz-antigravity-awesome-skills
+> Antigravity awesome skills — curated from sickn33/antigravity-awesome-skills.
 
-> **AntiGravity skills — breakthrough capability extensions that punch above their weight class for Claude Code**
+[![antigravity](https://img.shields.io/badge/antigravity-active-blue?style=flat&labelColor=555)](.)
+[![mae](https://img.shields.io/badge/MAE-powered-green?style=flat&labelColor=555)](.)
+[![tier0](https://img.shields.io/badge/tier0-11models-orange?style=flat&labelColor=555)](.)
+[![license](https://img.shields.io/badge/license-MIT-lightgrey?style=flat&labelColor=555)](LICENSE)
 
-[![skills](https://img.shields.io/badge/skills-antigravity-purple?style=flat)](.) [![impact](https://img.shields.io/badge/impact-high-red?style=flat)](.) [![type](https://img.shields.io/badge/type-advanced_extensions-blue?style=flat)](.)
-
-[Overview](#overview) · [Skills](#skills) · [Impact](#impact) · [Activation](#activation) · [Tips](#tips)
-
----
-
-## 🧠 OVERVIEW
-
-AntiGravity skills are the highest-impact Claude Code extensions — capabilities that unlock disproportionate results relative to their complexity. Named "AntiGravity" because they overcome the natural drag of repetitive, manual work through intelligent automation and compound leverage.
-
-| Component | Value |
-|---|---|
-| Characteristic | Disproportionate impact per skill loaded |
-| Use case | Complex multi-step automations, compound workflows |
-| Model | Tier 0 routing (zero Claude tokens for execution) |
-| Trigger | Manual activate or strong keyword match |
+[concepts](#concepts) · [architecture](#architecture) · [tips](#tips) · [startups](#startups) · [star](#star)
 
 ---
 
-## ⚡ SKILL INVENTORY
+## 🧠 CONCEPTS <a id="concepts"></a>
 
-| Skill | Impact | What It Does |
+| Feature | Location | Description |
 |---|---|---|
-| `superpowers` | Unlocks full G0DM0D3 mode | All Tier 0 models + parallel execution |
-| `all-agents` | 50-agent orchestration | Full DigiMinds agent roster activated |
-| `launch-optimized` | Session optimization | RAM allocation, model preloading, hook verification |
-| `ooda-loop` | Decision framework | Rapid Observe→Orient→Decide→Act on every prompt |
-| `meta-skill-orchestrator` | Skill chaining | Auto-combines skills for complex tasks |
-| `performance-marketing-agent` | Full PPC automation | End-to-end campaign build + report |
+| [**MAE Integration**](~/.claude/bin/mae) | `~/.claude/bin/mae` | All tasks routed through MAE swarm — 12 agents, wave-batched, RAM-safe |
+| [**Tier 0 Routing**](~/.claude/tier0.env) | `~/.claude/tier0.env` | Groq · Gemini · DeepSeek · Kimi · Bytez — $0 for 95% of tasks |
+| [**TCC Queue**](~/.claude/bin/tcc) | `~/.claude/bin/tcc` | `tcc blast "t1" "t2"` — parallel task execution |
+| [**llm-burst**](~/.claude/bin/llm-burst) | `~/.claude/bin/llm-burst` | 11 models race simultaneously — Bytez + Groq + Gemini + Kimi + ... |
+| [**Paperclip**](http://127.0.0.1:3100) | `http://127.0.0.1:3100` | CEO layer — goals, budgets, agent org chart, cost tracking |
+| [**OpenCLI**](~/installed-repos/opencli/) | `~/installed-repos/opencli/` | 90+ site adapters — zero LLM cost per call |
+| [**Deer Flow**](~/installed-repos/deer-flow/) | `~/installed-repos/deer-flow/` | ByteDance deep research pipeline |
+| [**auto-github-push**](~/.claude/bin/auto-github-push) | `~/.claude/bin/auto-github-push` | PostToolUse hook — auto-uploads any new script to GitHub |
+
+### 🔥 Hot
+
+| Feature | Location | Description |
+|---|---|---|
+| [**Bytez 100+ models**](~/.claude/bin/llm-burst) | `~/.claude/bin/llm-burst` | `call_bytez()` — free OpenAI-compatible API, integrated in burst |
+| [**Codex delegation**](.) | `~/.claude/bin/mae` | MAE delegates complex coding to OpenAI Codex agent automatically |
+| [**Kimi K2.6**](~/.claude/tier0.env) | `~/.claude/tier0.env` | 262K context, vision, video — replaces Claude Opus at 5% cost |
 
 ---
 
-## 💡 TIPS
+## ⚙️ ARCHITECTURE <a id="architecture"></a>
 
-■ **High-Impact Usage (5)**
+```
+User prompt → mae run "goal"
+        │
+  TCC decompose (Groq fast)
+        │
+  ┌─────┴────────────────────────────┐
+  │    Tier 0 Swarm (11 models)      │
+  │  Kimi-K2.6 · Groq · Gemini      │
+  │  DeepSeek · Bytez · Ollama       │
+  │  GLM · GPT4o · OpenRouter       │
+  └─────────────────────────────────┘
+        │
+  Groq-70B synthesis
+        │
+  ~/.claude/tcc-logs/ + Paperclip
+```
+
+---
+
+## 💡 TIPS AND TRICKS (8) <a id="tips"></a>
+
+[mae-ops](#tips-mae) · [models](#tips-models)
+
+<a id="tips-mae"></a>
+■ **MAE Operations (4)**
+
 | Tip | Source |
 |---|---|
-| `superpowers` + `all-agents` = maximum output mode for complex tasks | Skill combo |
-| AntiGravity skills compound — combining 2-3 unlocks exponential capability | Design |
-| Always deactivate after task — these skills are expensive on context | Gating rule |
-| `ooda-loop` is permanent via UserPromptSubmit hook — don't double-load | Hook config |
-| `launch-optimized` runs at session start — verify not loaded twice | Startup check |
+| `mae run "goal"` — always the default. 12 agents, ~8s, max quality. | [hmzainjamil](https://github.com/hmzainjamil) |
+| `tcc blast "t1" "t2" "t3"` — parallel fire multiple tasks simultaneously | [hmzainjamil](https://github.com/hmzainjamil) |
+| `tcc fire all` — execute entire pending queue at once | [hmzainjamil](https://github.com/hmzainjamil) |
+| `mae daily` — full DigiMinds ops: email, leads, content, KPI report | [hmzainjamil](https://github.com/hmzainjamil) |
 
-■ **Activation (3)**
+<a id="tips-models"></a>
+■ **Tier 0 Models (4)**
+
 | Tip | Source |
 |---|---|
-| `skill-on superpowers` for full Tier 0 burst mode | CLI ref |
-| `skill-on all-agents` for multi-agent orchestration tasks | CLI ref |
-| Check RAM before loading heavy agent skills — need 4GB free | Resource check |
+| Bytez free tier: `BYTEZ_API_KEY=cb4a7065a586ec6ca26394724ce5ec49` — 100+ models | [Bytez](https://bytez.com) |
+| Groq `llama-3.3-70b-versatile` — synthesis. `llama-3.1-8b-instant` — decomposition | [Groq](https://groq.com) |
+| `llm-burst --models bytez,groq,gemini "prompt"` — 3 free models race in ~2s | [hmzainjamil](https://github.com/hmzainjamil) |
+| Kimi K2.6: 262K context, vision, video. `--models kimi-k2.6` in llm-burst | [Moonshot AI](https://moonshot.cn) |
 
 ---
 
-## ☠️ TOOLS REPLACED
+## ☠️ STARTUPS / BUSINESSES <a id="startups"></a>
 
-| AntiGravity Skills | Replaced |
+| Feature | Replaced |
 |---|---|
-| 50-agent orchestration | Single-agent sequential execution |
-| OODA decision framework | Unstructured approach to each task |
-| Full Tier 0 burst | Single model, high cost |
-| Meta-skill chaining | Manual skill selection each time |
+| **MAE 12-agent swarm** | [AutoGPT](https://autogpt.net), [CrewAI](https://crewai.com), [SuperAGI](https://superagi.com) |
+| **Bytez 100+ free models** | [OpenRouter paid](https://openrouter.ai), [Together AI](https://together.ai) |
+| **TCC parallel task queue** | [Linear](https://linear.app), [ClickUp AI](https://clickup.com), [Asana](https://asana.com) |
+| **Paperclip company OS** | [Notion AI](https://notion.so), [Monday.com](https://monday.com) |
 
 ---
 
-*Part of [DigiMinds AI Agency Stack](https://github.com/hmzainjamil)*
+## Star History <a id="star"></a>
+[![Star History Chart](https://api.star-history.com/svg?repos=hmzainjamil/hmz-antigravity-awesome-skills&type=Date)](https://star-history.com/#hmzainjamil/hmz-antigravity-awesome-skills&Date)
